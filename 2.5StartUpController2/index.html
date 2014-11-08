@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+
+</head>
+<body>
+	<form ng-submit="requestFounding()" ng-controller='StartUpController'>
+		Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+		Recommendation: {{needed}}
+		<button>Fund my startup!</button>
+	</form>
+	<script src="../angular.js"></script>
+<script>
+function StartUpController($scope){
+	$scope.computeNeeded = function(){
+		$scope.needed = $scope.startingEstimate * 10;
+	};
+
+	$scope.requestFounding=function(){
+		window.alert("Sorry,please get more customers first");
+	};
+}
+</script>
+</body>
+</html>
